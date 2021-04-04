@@ -1,0 +1,8 @@
+prefix=/home/firefly/catkin_ws/devel
+
+Name: slam_car
+Description: Description of slam_car
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/firefly/catkin_ws/devel/lib 
+Requires: 

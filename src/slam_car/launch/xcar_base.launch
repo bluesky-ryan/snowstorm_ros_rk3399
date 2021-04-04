@@ -1,0 +1,25 @@
+<launch>
+  <!--启动地盘控制节点-->
+  <node name="base_control"    pkg="slam_car" type="base_control_node" output="screen">
+    <param name="port"         type="string"  value="/dev/basectl"/>
+    <param name="baudrate"     type="int"     value="115200"/>
+    <param name="debug_imu"    type="bool"    value="false"/>
+    <param name="debug_vel"    type="bool"    value="false"/>
+    <param name="debug_cmd"    type="bool"    value="false"/>
+  </node>
+
+  <!--启动IMU数据过滤-->
+  <node pkg="imu_complementary_filter" type="complementary_filter_node" 
+    name="complementary_filter_gain_node" output="screen">
+    <param name="fixed_frame"         value="odom"/>
+    <param name="do_bias_estimation"  value="true"/>
+    <param name="do_adaptive_gain"    value="true"/>
+    <param name="use_mag"             value="false"/>
+    <param name="gain_acc"            value="0.01"/>
+    <!--param name="gain_mag" value="0.01"-->
+  </node>
+
+  <!--启动里程计坐标发布节点-->
+  <node name="odom_node" pkg="slam_car" type="odom_node">
+  </node>
+</launch>

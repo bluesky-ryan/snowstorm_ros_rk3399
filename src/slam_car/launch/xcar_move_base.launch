@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find slam_car)/launch/xcar_base.launch"/>
+    <include file="$(find slam_car)/launch/rplidar.launch"/>
+    <include file="$(find slam_car)/param/slam_gmapping.xml"/>
+    <include file="$(find slam_car)/param/move_base.xml"/>
+    <include file="$(find slam_car)/launch/usb_cam.launch"/>
+</launch>

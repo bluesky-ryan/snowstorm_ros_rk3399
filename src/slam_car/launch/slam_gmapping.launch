@@ -1,0 +1,5 @@
+<launch>
+    <!--include file="$(find slam_car)/launch/xcar_base.launch"/-->
+    <include file="$(find slam_car)/launch/rplidar.launch"/>
+    <include file="$(find slam_car)/param/slam_gmapping.xml"/>
+</launch>

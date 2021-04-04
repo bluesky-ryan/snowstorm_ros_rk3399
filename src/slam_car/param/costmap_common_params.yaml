@@ -1,0 +1,16 @@
+obstacle_range: 2.5
+raytrace_range: 3.0
+footprint: [[0.085, 0.085], [-0.085, 0.085], [-0.085, -0.085], [0.085, -0.085]]
+#robot_radius: ir_of_robot
+inflation_radius: 0.05
+transform_tolerance: 0.1  #误差容许
+
+observation_sources: scan
+
+scan:
+  data_type: LaserScan
+  topic: scan
+  marking: true
+  clearing: true
+
+map_type: costmap

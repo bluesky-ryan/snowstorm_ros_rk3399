@@ -1,0 +1,9 @@
+<launch>
+    <include file="$(find slam_car)/launch/xcar_base.launch"/>
+    <include file="$(find slam_car)/launch/rplidar.launch"/>
+    <arg name="map_file" default="$(find slam_car)/map/mymap.yaml"/>
+    <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+    <include file="$(find slam_car)/launch/amcl.launch"/>
+    <include file="$(find slam_car)/param/move_base.xml"/>
+</launch>
